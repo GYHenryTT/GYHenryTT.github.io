@@ -50,4 +50,32 @@
     
   </entry>
   
+  <entry>
+    <title>About Me</title>
+    <link href="http://yoursite.com/2020/01/22/aboutme/"/>
+    <id>http://yoursite.com/2020/01/22/aboutme/</id>
+    <published>2020-01-23T02:37:04.000Z</published>
+    <updated>2020-03-05T06:15:01.476Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;A data geek, study in Brandeis University&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Name: Heyuan (Henry) Gao&lt;br&gt;Location: Greater Boston Area,
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Self Instruction" scheme="http://yoursite.com/tags/Self-Instruction/"/>
+    
+  </entry>
+  
 </feed>
