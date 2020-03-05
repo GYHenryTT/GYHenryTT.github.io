@@ -56,19 +56,45 @@
     <link href="http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/"/>
     <id>http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/</id>
     <published>2020-02-20T18:14:09.000Z</published>
-    <updated>2020-03-05T19:41:20.541Z</updated>
+    <updated>2020-03-05T19:42:59.780Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div align=&quot;center&quot;&gt;
+      &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;Naive-Bayes-and-Logistic-Regression-in-Text-Classification&quot;&gt;&lt;a
-        
-      
+&lt;h1 id=&quot;Naive-Bayes-and-Logistic-Regression-in-Text-Classification&quot;&gt;&lt;a href=&quot;#Naive-Bayes-and-Logistic-Regression-in-Text-Classification&quot; class=&quot;headerlink&quot; title=&quot;Naive Bayes and Logistic Regression in Text Classification&quot;&gt;&lt;/a&gt;Naive Bayes and Logistic Regression in Text Classification&lt;/h1&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;Simple-Practice&quot;&gt;&lt;a href=&quot;#Simple-Practice&quot; class=&quot;headerlink&quot; title=&quot;Simple Practice&quot;&gt;&lt;/a&gt;Simple Practice&lt;/h2&gt;&lt;p&gt;Assume we have a document, Given the following short movie reviews, each labeled with a genre, either comedy or action:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;document&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;class&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;ﬂy fast shoot love&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;action&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;fun couple love love&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;comedy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;fast furious shoot&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;action&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;couple ﬂy fast fun fun&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;comedy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;furious shoot shoot fun&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;action&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;and a new document D: [fast couple shoot ﬂy]&lt;/p&gt;
+&lt;p&gt;compute the most likely class for D.&lt;/p&gt;
     
     </summary>
     

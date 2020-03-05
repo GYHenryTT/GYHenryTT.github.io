@@ -74,6 +74,8 @@
 </tbody></table>
 <p>and a new document D: [fast couple shoot ﬂy]</p>
 <p>compute the most likely class for D.</p>
+<a id="more"></a>
+
 <h3 id="1-Naive-Bayes"><a href="#1-Naive-Bayes" class="headerlink" title="1. Naive Bayes"></a>1. Naive Bayes</h3><p>The generative model for Naive Bayes is $$P(class|feature) = \frac{P(feature|class)P(class)}{P(feature)}$$</p>
 <p>Based on the independence assumptions, we will have a caculation formula for the new document “fast couple shoot fly” as $$P(class|feature) \propto P(fast|class)P(couple|class)P(shoot|class)P(fly|class)P(class)$$My calculations for the value on the right side are as followed.</p>
 <p>$P(comedy)=\frac{n(comedy)}{n(all\ class)}=\frac{2}{5}$<br>$P(action)=\frac{3}{5}$</p>

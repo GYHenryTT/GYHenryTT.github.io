@@ -226,57 +226,9 @@
 </tbody></table>
 <p>and a new document D: [fast couple shoot ﬂy]</p>
 <p>compute the most likely class for D.</p>
-<h3 id="1-Naive-Bayes"><a href="#1-Naive-Bayes" class="headerlink" title="1. Naive Bayes"></a>1. Naive Bayes</h3><p>The generative model for Naive Bayes is $$P(class|feature) = \frac{P(feature|class)P(class)}{P(feature)}$$</p>
-<p>Based on the independence assumptions, we will have a caculation formula for the new document “fast couple shoot fly” as $$P(class|feature) \propto P(fast|class)P(couple|class)P(shoot|class)P(fly|class)P(class)$$My calculations for the value on the right side are as followed.</p>
-<p>$P(comedy)=\frac{n(comedy)}{n(all\ class)}=\frac{2}{5}$<br>$P(action)=\frac{3}{5}$</p>
-<p>While the bag of words would be {fly, fast, shoot, love, fun, couple, fast, furious} with length $d=7$, using add-1 smoothing for the likelihoods, I got a conditional probability table,</p>
-<table>
-<thead>
-<tr>
-<th align="center">P(feature|class)</th>
-<th align="right">comedy</th>
-<th align="right">action</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">fast</td>
-<td align="right">$\frac{n(fast)+1}{words(comedy)+d}=\frac{1+1}{9+7}=\frac{1}{8}$</td>
-<td align="right">$\frac{n(fast)+1}{words(action)+d}=\frac{2+1}{11+7}=\frac16$</td>
-</tr>
-<tr>
-<td align="center">couple</td>
-<td align="right">$ \frac 3{16}$</td>
-<td align="right">$ \frac1{18} $</td>
-</tr>
-<tr>
-<td align="center">shoot</td>
-<td align="right">$ \frac1{16}$</td>
-<td align="right">$ \frac5{18} $</td>
-</tr>
-<tr>
-<td align="center">fly</td>
-<td align="right">$\frac1{8}$</td>
-<td align="right">$\frac1{9}$</td>
-</tr>
-</tbody></table>
-<p>Therefore, with the formula mentioned before, the probability of document D belonging to each class will be (use log probability),</p>
-<p>$\log{P(comedy|D)} \propto \log(\frac{1}{8} \times \frac{3}{16} \times\frac{1}{16} \times\frac{1}{8} \times \frac{2}{5}) \approx-9.522$<br>$\log{P(action|D)} \propto -8.680 &gt; -9.764$</p>
-<p>As a result, the most likely class for D is <strong>action</strong>.</p>
-<h3 id="2-Logistic-Regression"><a href="#2-Logistic-Regression" class="headerlink" title="2. Logistic Regression"></a>2. Logistic Regression</h3><h4 id="2-1-Process-the-first-mini-batch"><a href="#2-1-Process-the-first-mini-batch" class="headerlink" title="2.1 Process the first mini-batch"></a>2.1 Process the first mini-batch</h4><p>Using cross entropy lost function<br>$$L=y\log{\hat{y}} + (1-y)\log{(1-\hat{y})}$$ in this case,  $\hat{y}=\sigma(\theta^TX)$, $\theta=[w_{fast}, w_{couple}, w_{shoot}, w_{fly}, b]$ and $\sigma(z)=\frac1{1+e^{-z}}$</p>
-<p>we will get a general gradient formula as<br>$$<br>\nabla L = \begin{bmatrix}<br>[\sigma(\theta^TX)-y]x_{fast}\<br>[\sigma(\theta^TX)-y]x_{couple}\<br>[\sigma(\theta^TX)-y]x_{shoot}\<br>[\sigma(\theta^TX)-y]x_{fly}\<br>\sigma(\theta^TX)-y<br>\end{bmatrix}<br>$$<br>So the individual gradiant for the first three examples will be<br>$$<br>\nabla L_{1} = \begin{bmatrix}<br>(0.5 - 0)\times1\<br>(0.5 - 0)\times0\<br>(0.5 - 0)\times1\<br>(0.5 - 0)\times1\<br>0.5 - 0<br>\end{bmatrix} =<br>\begin{bmatrix}<br>0.5\<br>0\<br>0.5\<br>0.5\<br>0.5<br>\end{bmatrix}<br>$$<br>$$<br>\nabla L_{2} =<br>\begin{bmatrix}<br>0\<br>-0.5\<br>0\<br>0\<br>-0.5<br>\end{bmatrix}<br>$$<br>$$<br>\nabla L_{3} =<br>\begin{bmatrix}<br>0.5\<br>0\<br>0.5\<br>0\<br>0.5<br>\end{bmatrix}<br>$$</p>
-<p>The overall gradiant will be</p>
-<p>$$<br>\nabla L_{firstbatch} =<br>\begin{bmatrix}<br>\frac13\<br>-\frac16\<br>\frac13\<br>\frac16\<br>\frac16<br>\end{bmatrix}<br>$$</p>
-<p>Use the gradiant to update the weight vector with learning rate $\eta=0.1$</p>
-<p>$$<br>\theta_{1} = \theta_{0}-\eta\nabla L_{firstbatch}=<br>\begin{bmatrix}<br>-\frac1{30}\<br>\frac1{60}\<br>-\frac1{30}\<br>-\frac1{60}\<br>-\frac1{60}<br>\end{bmatrix}<br>$$</p>
-<h4 id="2-2-Process-the-second-mini-batch"><a href="#2-2-Process-the-second-mini-batch" class="headerlink" title="2.2 Process the second mini-batch"></a>2.2 Process the second mini-batch</h4><p>Caculate individual gradiant in second batch, where $\sigma(\theta_1^TX)=\sigma(1\times(−0.0333) + 1\times(0.0167) + 0\times(−0.0333) + 1\times(−0.0167) − 0.0167)=\sigma(-0.05)=0.4875$</p>
-<p>$$<br>\nabla L_{4} =<br>\begin{bmatrix}<br>[\sigma(\theta_1^TX)-1]\times1\<br>[\sigma(\theta_1^TX)-1]\times1\<br>[\sigma(\theta_1^TX)-1]\times0\<br>[\sigma(\theta_1^TX)-1]\times1\<br>\sigma(\theta_1^TX)-1<br>\end{bmatrix}=<br>\begin{bmatrix}<br>−0.5125\<br>−0.5125\<br>0\<br>−0.5125\<br>−0.5125<br>\end{bmatrix}<br>$$<br>$$<br>\nabla L_{5} =<br>\begin{bmatrix}<br>[\sigma(\theta_1^TX)-0]\times0\<br>[\sigma(\theta_1^TX)-0]\times0\<br>[\sigma(\theta_1^TX)-0]\times2\<br>[\sigma(\theta_1^TX)-0]\times0\<br>\sigma(\theta_1^TX)-0<br>\end{bmatrix}=<br>\begin{bmatrix}<br>0\<br>0\<br>0.9584\<br>0\<br>0.4792<br>\end{bmatrix}<br>$$</p>
-<p>The overall gradiant for second batch will be</p>
-<p>$$<br>\nabla L_{secondbatch} =<br>\begin{bmatrix}<br>-0.2562\<br>-0.2562\<br>0.4792\<br>-0.2562\<br>-0.0167<br>\end{bmatrix}<br>$$</p>
-<p>Use this gradiant to update the weight vector with learning rate $\eta=0.1$</p>
-<p>$$<br>\begin{aligned}<br>\theta_{2} &amp;= \theta_{1}-\eta\nabla L_{secondbatch}\<br>&amp;=<br>\begin{bmatrix}<br>-\frac1{30}\<br>\frac1{60}\<br>-\frac1{30}\<br>-\frac1{60}\<br>-\frac1{60}<br>\end{bmatrix}-0.1<br>\begin{bmatrix}<br>-0.2562\<br>-0.2562\<br>0.4792\<br>-0.2562\<br>-0.0167<br>\end{bmatrix}\<br>&amp;=<br>\begin{bmatrix}<br>-0.0077\<br>0.0423\<br>-0.0813\<br>0.0090\<br>-0.0150<br>\end{bmatrix}<br>\end{aligned}<br>$$</p>
-<h3 id="3-Compute-the-probability"><a href="#3-Compute-the-probability" class="headerlink" title="3. Compute the probability"></a>3. Compute the probability</h3><p>The probabability that D has the class “comedy” will be<br>$$\begin{aligned}<br>P(y=1|D)&amp;=\sigma(\theta^TX)\<br>&amp;=\sigma{(\begin{bmatrix}<br>-0.0077\<br>0.0423\<br>-0.0813\<br>0.0090\<br>-0.0150<br>\end{bmatrix}^T<br>\begin{bmatrix}<br>1\<br>1\<br>1\<br>1\<br>1<br>\end{bmatrix})}\<br>&amp;=0.4868<br>\end{aligned}$$</p>
-<p>Therefore, the most likely class for D is <strong>action</strong>.</p>
-
+      
+      <a class="article-more-link" href="/2020/02/20/Naive-Bayes-and-Logistic-Regression/">Read more</a>
+      
       
       <!-- reward -->
       
