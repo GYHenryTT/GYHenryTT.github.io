@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-    
+   
+  <meta name="keywords" content="Blog, Code, Learning journal" />
+   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    learning |  Monologue From a Data Geek
+    About Me |  Monologue From a Data Geek
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,7 +34,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="page-" class="article article-type-page" itemscope
+  <article id="post-About-me" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +42,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  learning
+  About Me
 </h1>
   
 
@@ -48,6 +50,20 @@
     
 
     
+    <div class="article-meta">
+      <a href="/2020/01/22/About-me/" class="article-date">
+  <time datetime="2020-01-23T02:37:04.000Z" itemprop="datePublished">2020-01-22</time>
+</a>
+      
+      
+    </div>
+    
+
+    
+    
+
+
+
 
     
 
@@ -58,7 +74,12 @@
       
 
       
-      
+      <blockquote>
+<p>A data geek, study in Brandeis University</p>
+</blockquote>
+<p>Name: Heyuan (Henry) Gao<br>Location: Greater Boston Area, MA, US<br>LinkedIn: <a href="https://www.linkedin.com/in/heyuangao" target="_blank" rel="noopener">Henry Gao</a><br>GitHub: <a href="https://github.com/GYHenryTT" target="_blank" rel="noopener">GYHenryTT</a></p>
+<p>I</p>
+<img src="C:\Users\Henry's Smart Brick\OneDrive\Personal Doc\Picture\In Hallstatt(zoomed).jpg" alt="avatar" width="300" style="border-radius:50%"/>
       
       <!-- reward -->
       
@@ -110,13 +131,15 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/learning/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/22/About-me/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Self-Introduction/" rel="tag">Self Introduction</a></li></ul>
+
 
     </footer>
 
@@ -182,6 +205,8 @@
   
 
   
+  
+  
 
 </article>
 </section>
@@ -194,6 +219,11 @@
         Henry Gao
       </li>
       <li>
+        
+          Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
         
       </li>
     </ul>
@@ -209,8 +239,6 @@
       </li>
       <li>
         <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
         
       </li>
     </ul>
@@ -249,15 +277,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/projects">Project</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/learning">Learning</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2020/about">About Me</a>
+      <a class="nav-item-link" href="/about">About Me</a>
     </li>
     
   </ul>
@@ -299,11 +319,6 @@
     </div>
     
     
-    <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
-      <span class="reward-type">微信</span>
-    </div>
-    
   </div>
 </div>
       
@@ -320,10 +335,6 @@
 
 
 <script src="/js/share.js"></script>
-
-
-
-<script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
@@ -344,6 +355,30 @@
 </script>
 
 
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
 
 
 <script>
