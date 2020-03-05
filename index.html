@@ -73,7 +73,7 @@
     
     
     
-    <article id="post-test-my-site" class="article article-type-post" itemscope
+    <article id="post-Naive-Bayes-Classifier" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -81,8 +81,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2020/02/09/test-my-site/"
-    >test_my_site</a
+  <a class="article-title" href="/2020/03/01/Naive-Bayes-Classifier/"
+    >Naive Bayes Classifier</a
   >
 </h2>
   
@@ -92,73 +92,14 @@
 
     
     <div class="article-meta">
-      <a href="/2020/02/09/test-my-site/" class="article-date">
-  <time datetime="2020-02-09T07:00:41.000Z" itemprop="datePublished">2020-02-09</time>
+      <a href="/2020/03/01/Naive-Bayes-Classifier/" class="article-date">
+  <time datetime="2020-03-01T22:06:45.000Z" itemprop="datePublished">2020-03-01</time>
 </a>
       
-      
-      
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      
-      
-      <!-- reward -->
-      
-    </div>
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-
-    </footer>
-
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Project/">Project</a> / <a class="article-category-link" href="/categories/Project/Computational-Linguistics/">Computational Linguistics</a>
   </div>
 
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-hello-world" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/02/08/hello-world/"
-    >Hello World</a
-  >
-</h2>
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/02/08/hello-world/" class="article-date">
-  <time datetime="2020-02-09T04:03:57.694Z" itemprop="datePublished">2020-02-08</time>
-</a>
-      
       
       
       
@@ -174,19 +115,21 @@
       
 
       
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <div align=center>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="Naive-Bayes-Classifier-and-Evaluation"><a href="#Naive-Bayes-Classifier-and-Evaluation" class="headerlink" title="Naive Bayes Classifier and Evaluation"></a>Naive Bayes Classifier and Evaluation</h1></div>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><h3 id="1-Training-Function"><a href="#1-Training-Function" class="headerlink" title="1. Training Function"></a>1. Training Function</h3><p>To collect the word counts, we need to first split the text in the training set. In this case, I used regular expression <strong>‘[^A-Za-z\‘]+’</strong> as the seperator. Specifically, it will discard all non-letters except for single quote because some word with quote may have different meanings such as “I’m”, “That’s”, etc.</p>
+<p>Then, the class initialization was changed. I used set to collect all the features instead of using dictionary, and added a new variable <em>class_count</em> to collect class counts. Inside the train function, it can visit every seperate word and generate word counts based on the document’s class. Accordingly, it will caculate the priors and likelihoods.</p>
+<h3 id="2-Evaluation-Function"><a href="#2-Evaluation-Function" class="headerlink" title="2. Evaluation Function"></a>2. Evaluation Function</h3><p>This function will generate precision, recall, f1 score and accuracy for both positive class and negative class. If the mode is ‘print’, the function will print out all the results based on the class, otherwise the function will return f1 score for both class as well as accuracy for further analysis (in this case, for grid search, which will be mentioned latter).</p>
+<h3 id="3-Feature-selection"><a href="#3-Feature-selection" class="headerlink" title="3. Feature selection"></a>3. Feature selection</h3><p>I applied the mutual information to select features. By this function, I calculated mutual information (also called information gain) for each word in the training set. Afterwards, the function will choose a specific number of the words with top mutual infomation. The number of choosing words would be based on user defined selection rate (a ratio from 0 to 1).</p>
+<h3 id="4-Grid-Search-Function"><a href="#4-Grid-Search-Function" class="headerlink" title="4. Grid Search Function"></a>4. Grid Search Function</h3><p>This is an add-on function for selecting the best feature select rate. This function will take a list of select rates as input. It will use the selected feature to train and test model, print and plot the evaluation results.</p>
+<h2 id="Result-Analysis"><a href="#Result-Analysis" class="headerlink" title="Result Analysis"></a>Result Analysis</h2><h3 id="1-Raw-Result"><a href="#1-Raw-Result" class="headerlink" title="1. Raw Result"></a>1. Raw Result</h3><p>At the beginning, I trained the model without feature selection (you may set selection rate as 0 to verify the result). The evaluation result is as followed.</p>
+<p><img src="images/Naive-Bayes-Classifier/rawresult.png" alt="avatar"></p>
+<h3 id="2-Adjustment-and-Optimization"><a href="#2-Adjustment-and-Optimization" class="headerlink" title="2. Adjustment and Optimization"></a>2. Adjustment and Optimization</h3><p>Then, I implement grid search to find the best select rate and get the following results. These two plots have select rate as X-axis and evaluation result as Y-axis (f1 in both negative and positive class as well as accuracy)</p>
+<p><img src="images/Naive-Bayes-Classifier/plot_1.png" alt="avatar"><br><img src="images/Naive-Bayes-Classifier/plot2.png" alt="avatar"></p>
+<p>Select rates in the first plot are from 0.01 to 0.99 with step size 0.05. And I found the model performed well in small selection rate. So in the second plot, I chose select rate from 0.001 to 0.1 with step size 0.001. Finally, I got the best selection rate 0.026 which means there will be 1010 words in the selected features. The evaluation of my Naive Bayes model with the best feature set is shown below.</p>
+<p><img src="images/Naive-Bayes-Classifier/finalresult.png" alt="avatar"></p>
 
       
       <!-- reward -->
@@ -197,6 +140,8 @@
     <footer class="article-footer">
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Course-Project/" rel="tag">Course Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Naive-Bayes/" rel="tag">Naive Bayes</a></li></ul>
+
 
     </footer>
 

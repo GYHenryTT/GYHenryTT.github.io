@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-09T07:00:41.555Z</updated>
+  <updated>2020-03-05T05:25:33.102Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,26 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test_my_site</title>
-    <link href="http://yoursite.com/2020/02/09/test-my-site/"/>
-    <id>http://yoursite.com/2020/02/09/test-my-site/</id>
-    <published>2020-02-09T07:00:41.000Z</published>
-    <updated>2020-02-09T07:00:41.555Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/02/08/hello-world/"/>
-    <id>http://yoursite.com/2020/02/08/hello-world/</id>
-    <published>2020-02-09T04:03:57.694Z</published>
-    <updated>2020-02-09T04:03:57.694Z</updated>
+    <title>Naive Bayes Classifier</title>
+    <link href="http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/"/>
+    <id>http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/</id>
+    <published>2020-03-01T22:06:45.000Z</published>
+    <updated>2020-03-05T05:25:33.102Z</updated>
     
     <summary type="html">
     
@@ -44,13 +29,27 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;div align=center&gt;
+
+&lt;h1 id=&quot;Naive-Bayes-Classifier-and-Evaluation&quot;&gt;&lt;a href=&quot;#Naive-Bayes-Classifier-and-Evaluation&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
+      <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
+    
+      <category term="Computational Linguistics" scheme="http://yoursite.com/categories/Project/Computational-Linguistics/"/>
+    
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
+    
+      <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Course Project" scheme="http://yoursite.com/tags/Course-Project/"/>
     
   </entry>
   
