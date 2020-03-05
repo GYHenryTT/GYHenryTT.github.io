@@ -54,32 +54,4 @@
     
   </entry>
   
-  <entry>
-    <title>About Me</title>
-    <link href="http://yoursite.com/2020/01/22/about/"/>
-    <id>http://yoursite.com/2020/01/22/about/</id>
-    <published>2020-01-23T02:37:04.000Z</published>
-    <updated>2020-03-05T04:25:50.307Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;A data geek, study in Brandeis University&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Name: Heyuan (Henry) Gao&lt;br&gt;Location: Greater Boston Area,
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Self-Introduction" scheme="http://yoursite.com/tags/Self-Introduction/"/>
-    
-  </entry>
-  
 </feed>

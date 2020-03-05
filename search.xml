@@ -23,20 +23,4 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
-  <entry>
-    <title>About Me</title>
-    <url>/2020/01/22/about/</url>
-    <content><![CDATA[<blockquote>
-<p>A data geek, study in Brandeis University</p>
-</blockquote>
-<p>Name: Heyuan (Henry) Gao<br>Location: Greater Boston Area, MA, US<br><a href="https://www.linkedin.com/in/heyuangao" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&nbsp;&nbsp;<a href="https://github.com/GYHenryTT" target="_blank" rel="noopener">Github</a> &nbsp;&nbsp;&nbsp;<a href="/Resume_Heyuan_Gao_F.pdf">Resume</a></p>
-<img src="In Hallstatt.jpg" alt="avatar" width="300" style="border-radius:50%"/>
-
-<p>I am a master’s student in Business Analytics program at Brandeis University. Before coming to Brandeis, I obtained bachelor’s degree in Biology Science from Fudan University. My interest in data science rised from Biostatistic and developed by my working experience as an algorithm engineer in Ping An Technology.</p>
-<p>Now I am seeking opportunities to apply my technical skills to real-world tasks.</p>
-]]></content>
-      <tags>
-        <tag>Self-Introduction</tag>
-      </tags>
-  </entry>
 </search>
