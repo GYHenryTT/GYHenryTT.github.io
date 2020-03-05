@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-05T18:16:34.545Z</updated>
+  <updated>2020-03-05T20:41:14.126Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/"/>
     <id>http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/</id>
     <published>2020-03-01T22:06:45.000Z</published>
-    <updated>2020-03-05T18:16:34.545Z</updated>
+    <updated>2020-03-05T20:41:14.126Z</updated>
     
     <summary type="html">
     
@@ -40,8 +40,6 @@
     
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
-      <category term="Computational Linguistics" scheme="http://yoursite.com/categories/Project/Computational-Linguistics/"/>
-    
     
       <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
@@ -56,7 +54,7 @@
     <link href="http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/"/>
     <id>http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/</id>
     <published>2020-02-20T18:14:09.000Z</published>
-    <updated>2020-03-05T20:37:13.297Z</updated>
+    <updated>2020-03-05T20:51:55.664Z</updated>
     
     <summary type="html">
     
@@ -64,7 +62,7 @@
 
 &lt;h1 id=&quot;Naive-Bayes-and-Logistic-Regression-in-Text-Classification&quot;&gt;&lt;a href=&quot;#Naive-Bayes-and-Logistic-Regression-in-Text-Classification&quot; class=&quot;headerlink&quot; title=&quot;Naive Bayes and Logistic Regression in Text Classification&quot;&gt;&lt;/a&gt;Naive Bayes and Logistic Regression in Text Classification&lt;/h1&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;Simple-Practice&quot;&gt;&lt;a href=&quot;#Simple-Practice&quot; class=&quot;headerlink&quot; title=&quot;Simple Practice&quot;&gt;&lt;/a&gt;Simple Practice&lt;/h2&gt;&lt;p&gt;Assume we have a document, Given the following short movie reviews, each labeled with a genre, either comedy or action:&lt;/p&gt;
+&lt;h2 id=&quot;Simple-Practice&quot;&gt;&lt;a href=&quot;#Simple-Practice&quot; class=&quot;headerlink&quot; title=&quot;Simple Practice&quot;&gt;&lt;/a&gt;Simple Practice&lt;/h2&gt;&lt;p&gt;Assume we have a document set, Given the following short movie reviews, each labeled with a genre, either comedy or action:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -100,8 +98,6 @@
     
     
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
-    
-      <category term="Computational Linguistics" scheme="http://yoursite.com/categories/Learning-Journal/Computational-Linguistics/"/>
     
     
       <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
