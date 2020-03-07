@@ -68,11 +68,11 @@
     
     
     
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
       <category term="Hidden Markov Models" scheme="http://yoursite.com/tags/Hidden-Markov-Models/"/>
     
@@ -103,11 +103,11 @@
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
     
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
   </entry>
   
@@ -116,7 +116,7 @@
     <link href="http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/"/>
     <id>http://yoursite.com/2020/02/20/Naive-Bayes-and-Logistic-Regression/</id>
     <published>2020-02-20T18:14:09.000Z</published>
-    <updated>2020-03-07T04:27:34.022Z</updated>
+    <updated>2020-03-07T04:39:33.376Z</updated>
     
     <summary type="html">
     
@@ -132,11 +132,11 @@
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
     
     
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     
