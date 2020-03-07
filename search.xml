@@ -90,7 +90,19 @@
 <p>The second is commonly called the <strong>naive Bayes assumption</strong>: this is the conditional independence assumption that the probabilities $P(w_i|c)$ are independent given the class c and hence can be ‘naively’ multiplied as follows: </p>
 <p>$$P(w_1, w_2,…,w_n|c)=P(w_1|c)P(w_2|c)…P(w_n|c)$$</p>
 <h3 id="2-2-Training-algorithm"><a href="#2-2-Training-algorithm" class="headerlink" title="2.2 Training algorithm"></a>2.2 Training algorithm</h3><p><img src="/2020/02/20/Naive-Bayes-and-Logistic-Regression/NB_Algorithm.png" alt="avatar"></p>
-<h2 id="3-Logistic-Regression"><a href="#3-Logistic-Regression" class="headerlink" title="3. Logistic Regression"></a>3. Logistic Regression</h2><h2 id="4-Worked-Example"><a href="#4-Worked-Example" class="headerlink" title="4. Worked Example"></a>4. Worked Example</h2><p>Assume we have a document set, Given the following short movie reviews, each labeled with a genre, either comedy or action:</p>
+<h2 id="3-Logistic-Regression"><a href="#3-Logistic-Regression" class="headerlink" title="3. Logistic Regression"></a>3. Logistic Regression</h2><p>Similar to Naive Bayes, Logistic Regression is a linear classifier. It models P(Y|X) by a linear component and a sigmoid function:</p>
+<p>$$P(y=1|x)=\sigma(wx+b)$$</p>
+<p>where $$\sigma(z)=\frac{1}{1+e^{-z}}$$</p>
+<p>For the second class, $$P(y=0|x)=1-P(y=1|x)$$</p>
+<h3 id="3-1-The-cross-entropy-loss-function"><a href="#3-1-The-cross-entropy-loss-function" class="headerlink" title="3.1 The cross-entropy loss function"></a>3.1 The cross-entropy loss function</h3><p>We usually use cross-entropy as the loss function for Logistic Regression. Since there are only two discrete outcomes (1 or 0), we can<br>express the probability that our classifier produces for one observation as the following:</p>
+<p>$$P(y|x)=\hat{y}^y(1-\hat{y})^{1-y}$$</p>
+<p>Now we take the log of both sides and plug in the definition of $\hat{y}=\sigma(wx+b), $ we will get the cross-entropy loss $L_{CE}$:</p>
+<p>$$L_{CE}(w, b)=-[ylog\sigma(wx+b)+(1-y)log(1-\sigma(wx+b))]$$</p>
+<h3 id="3-2-Gradient-Descent"><a href="#3-2-Gradient-Descent" class="headerlink" title="3.2 Gradient Descent"></a>3.2 Gradient Descent</h3><p>Our goal with gradient descent is to find the optimal weights: minimize the loss function we’ve defined for the model. For logistic regression, this loss function is conveniently <strong>convex</strong>. A convex function has just one minimum; there are no local minima to get stuck in, so gradient descent starting from any point is guaranteed to find the minimum. (By contrast, the loss for multi-layer neural networks is non-convex, and gradient descent may get stuck in local minima for neural network training and never find the global optimum.)</p>
+<p>The following shows the general training steps:</p>
+<p><img src="/2020/02/20/Naive-Bayes-and-Logistic-Regression/LR_GD.png" alt="avatar"></p>
+<p>However, there are three ways to calculate gradient descent. The <strong>Stochastic Gradient Descent Algorithm</strong> uses the gradient after each sample to update $\theta$. <strong>Batch gradient descent</strong> updates $\theta$ after processing the entire training set. <strong>Minibatch gradient descent</strong> updates $\theta$ after $m$ training examples (Usually we use sum or average of gradients).</p>
+<h2 id="4-Worked-Example"><a href="#4-Worked-Example" class="headerlink" title="4. Worked Example"></a>4. Worked Example</h2><p>Assume we have a document set, Given the following short movie reviews, each labeled with a genre, either comedy or action:</p>
 <table>
 <thead>
 <tr>
