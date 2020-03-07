@@ -73,6 +73,145 @@
     
     
     
+    <article id="post-Model-Evaluation" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/06/Model-Evaluation/"
+    >Model Evaluation</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/06/Model-Evaluation/" class="article-date">
+  <time datetime="2020-03-07T04:19:22.000Z" itemprop="datePublished">2020-03-06</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Learning-Journal/">Learning Journal</a>
+  </div>
+
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="Model-Evaluation"><a href="#Model-Evaluation" class="headerlink" title="Model Evaluation"></a>Model Evaluation</h1><p>To be continue…</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Classifier-Evaluation/" rel="tag">Classifier Evaluation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Regression-Evaluation/" rel="tag">Regression Evaluation</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-N-grams-and-HMM" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/06/N-grams-and-HMM/"
+    >N-grams and HMM</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/06/N-grams-and-HMM/" class="article-date">
+  <time datetime="2020-03-06T22:06:23.000Z" itemprop="datePublished">2020-03-06</time>
+</a>
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <div align="center">
+
+<h1 id="Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM"><a href="#Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM" class="headerlink" title="Language Modeling and Sequence Labeling (N-grams and HMM)"></a>Language Modeling and Sequence Labeling (N-grams and HMM)</h1></div>
+
+
+
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing (3rd ed. draft), Dan Jurafsky and James H. Martin</a></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hidden-Markov-Models/" rel="tag">Hidden Markov Models</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/N-grams/" rel="tag">N-grams</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-Naive-Bayes-Classifier" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -195,37 +334,7 @@
 
 <h1 id="Naive-Bayes-and-Logistic-Regression-in-Text-Classification"><a href="#Naive-Bayes-and-Logistic-Regression-in-Text-Classification" class="headerlink" title="Naive Bayes and Logistic Regression in Text Classification"></a>Naive Bayes and Logistic Regression in Text Classification</h1></div>
 
-<h2 id="Simple-Practice"><a href="#Simple-Practice" class="headerlink" title="Simple Practice"></a>Simple Practice</h2><p>Assume we have a document set, Given the following short movie reviews, each labeled with a genre, either comedy or action:</p>
-<table>
-<thead>
-<tr>
-<th align="center">document</th>
-<th align="center">class</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">ﬂy fast shoot love</td>
-<td align="center">action</td>
-</tr>
-<tr>
-<td align="center">fun couple love love</td>
-<td align="center">comedy</td>
-</tr>
-<tr>
-<td align="center">fast furious shoot</td>
-<td align="center">action</td>
-</tr>
-<tr>
-<td align="center">couple ﬂy fast fun fun</td>
-<td align="center">comedy</td>
-</tr>
-<tr>
-<td align="center">furious shoot shoot fun</td>
-<td align="center">action</td>
-</tr>
-</tbody></table>
-<p>and a new document D: [fast couple shoot ﬂy]</p>
-<p>compute the most likely class for D.</p>
+<h2 id="1-Generative-and-Discriminative-Classifiers"><a href="#1-Generative-and-Discriminative-Classifiers" class="headerlink" title="1. Generative and Discriminative Classifiers"></a>1. Generative and Discriminative Classifiers</h2><p>The most important difference between naive Bayes and logistic regression is that logistic regression is a discriminative classifier while naive Bayes is a generative classifier. These are two very different frameworks for how to build a machine learning model.</p>
       
       <a class="article-more-link" href="/2020/02/20/Naive-Bayes-and-Logistic-Regression/">Read more</a>
       
