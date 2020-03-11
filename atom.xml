@@ -50,7 +50,7 @@
     <link href="http://yoursite.com/2020/03/06/N-grams-and-HMM/"/>
     <id>http://yoursite.com/2020/03/06/N-grams-and-HMM/</id>
     <published>2020-03-06T22:06:23.000Z</published>
-    <updated>2020-03-07T01:48:59.662Z</updated>
+    <updated>2020-03-11T19:05:27.929Z</updated>
     
     <summary type="html">
     
@@ -68,11 +68,11 @@
     
     
     
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
       <category term="Hidden Markov Models" scheme="http://yoursite.com/tags/Hidden-Markov-Models/"/>
     
@@ -83,7 +83,7 @@
     <link href="http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/"/>
     <id>http://yoursite.com/2020/03/01/Naive-Bayes-Classifier/</id>
     <published>2020-03-01T22:06:45.000Z</published>
-    <updated>2020-03-07T04:24:36.340Z</updated>
+    <updated>2020-03-07T06:04:48.336Z</updated>
     
     <summary type="html">
     
@@ -92,7 +92,7 @@
 &lt;h1 id=&quot;Naive-Bayes-Classifier-and-Evaluation&quot;&gt;&lt;a href=&quot;#Naive-Bayes-Classifier-and-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Naive Bayes Classifier and Evaluation&quot;&gt;&lt;/a&gt;Naive Bayes Classifier and Evaluation&lt;/h1&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;Program-Instruction&quot;&gt;&lt;a href=&quot;#Program-Instruction&quot; class=&quot;headerlink&quot; title=&quot;Program Instruction&quot;&gt;&lt;/a&gt;Program Instruction&lt;/h2&gt;&lt;p&gt;The source code has been posted in my &lt;a href=&quot;https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Basic Naive Bayes function: $$P(C|w)=\frac{P(W|C)P(C)}{P(W)}$$&lt;br&gt;$$P(C|W) \propto P(W|C)P(C),$$&lt;/p&gt;
+&lt;p&gt;Basic Naive Bayes function: $$P(C|W)=\frac{P(W|C)P(C)}{P(W)}$$&lt;br&gt;$$P(C|W) \propto P(W|C)P(C),$$&lt;/p&gt;
 &lt;p&gt;where $P(W|C)$ is called as likelihood and  $P(C)$ as prior.&lt;/p&gt;
 &lt;h3 id=&quot;1-Training-Function&quot;&gt;&lt;a href=&quot;#1-Training-Function&quot; class=&quot;headerlink&quot; title=&quot;1. Training Function&quot;&gt;&lt;/a&gt;1. Training Function&lt;/h3&gt;&lt;p&gt;To collect the word counts, we need to first split the text in the training set. In this case, I used regular expression &lt;strong&gt;‘[^A-Za-z\‘]+’&lt;/strong&gt; as the seperator. Specifically, it will discard all non-letters except for single quote because some word with quote may have different meanings such as “I’m”, “That’s”, etc.&lt;/p&gt;
 &lt;p&gt;Then, the class initialization was changed. I used set to collect all the features, and use variable &lt;em&gt;class_count&lt;/em&gt; to collect class numbers. Inside the train function, it can visit every seperate word and generate word counts based on the document’s class. Accordingly, it will caculate the priors and likelihoods.&lt;/p&gt;
@@ -103,11 +103,11 @@
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
   </entry>
   
@@ -132,11 +132,11 @@
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     

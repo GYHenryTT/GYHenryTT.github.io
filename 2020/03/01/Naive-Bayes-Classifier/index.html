@@ -85,7 +85,7 @@
 <h1 id="Naive-Bayes-Classifier-and-Evaluation"><a href="#Naive-Bayes-Classifier-and-Evaluation" class="headerlink" title="Naive Bayes Classifier and Evaluation"></a>Naive Bayes Classifier and Evaluation</h1></div>
 
 <h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><p>The source code has been posted in my <a href="https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA2" target="_blank" rel="noopener">github</a></p>
-<p>Basic Naive Bayes function: $$P(C|w)=\frac{P(W|C)P(C)}{P(W)}$$<br>$$P(C|W) \propto P(W|C)P(C),$$</p>
+<p>Basic Naive Bayes function: $$P(C|W)=\frac{P(W|C)P(C)}{P(W)}$$<br>$$P(C|W) \propto P(W|C)P(C),$$</p>
 <p>where $P(W|C)$ is called as likelihood and  $P(C)$ as prior.</p>
 <h3 id="1-Training-Function"><a href="#1-Training-Function" class="headerlink" title="1. Training Function"></a>1. Training Function</h3><p>To collect the word counts, we need to first split the text in the training set. In this case, I used regular expression <strong>‘[^A-Za-z\‘]+’</strong> as the seperator. Specifically, it will discard all non-letters except for single quote because some word with quote may have different meanings such as “I’m”, “That’s”, etc.</p>
 <p>Then, the class initialization was changed. I used set to collect all the features, and use variable <em>class_count</em> to collect class numbers. Inside the train function, it can visit every seperate word and generate word counts based on the document’s class. Accordingly, it will caculate the priors and likelihoods.</p>

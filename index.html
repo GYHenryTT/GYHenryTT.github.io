@@ -181,9 +181,297 @@
 
 <h1 id="Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM"><a href="#Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM" class="headerlink" title="Language Modeling and Sequence Labeling (N-grams and HMM)"></a>Language Modeling and Sequence Labeling (N-grams and HMM)</h1></div>
 
-
-
-
+<h2 id="Working-Example"><a href="#Working-Example" class="headerlink" title="Working Example"></a>Working Example</h2><h3 id="1-N-grams"><a href="#1-N-grams" class="headerlink" title="1. N-grams"></a>1. N-grams</h3><p>Given the following short sentences:</p>
+<pre><code>Alice admired Dorothy 
+Dorothy admired every dwarf 
+Dorothy cheered 
+every dwarf cheered</code></pre><h4 id="1-1-Train-the-following-n-gram-language-models-on-the-above-data"><a href="#1-1-Train-the-following-n-gram-language-models-on-the-above-data" class="headerlink" title="1.1 Train the following n-gram language models on the above data:"></a>1.1 Train the following n-gram language models on the above data:</h4><p>(a) Unigram, unsmoothed<br>(b) Bigram, unsmoothed<br>(c) Bigram, add-1 smoothing<br>(d) Bigram, interpolation ($λ_1 = λ_2 = 1/2$)</p>
+<p>First, create a probability table for unigram model (set unknown word count equal to 1):</p>
+<table>
+<thead>
+<tr>
+<th>$w_n$</th>
+<th align="right">Alice</th>
+<th align="right">admired</th>
+<th align="right">Dorothy</th>
+<th align="right">every</th>
+<th align="right">dwarf</th>
+<th align="right">cheered</th>
+<th align="right">&lt;/S&gt;</th>
+<th align="right">&lt;UNK&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>$P(w_n)$</td>
+<td align="right">$\frac{1}{17}=0.0588$</td>
+<td align="right">0.1176</td>
+<td align="right">0.1765</td>
+<td align="right">0.1176</td>
+<td align="right">0.1176</td>
+<td align="right">0.1176</td>
+<td align="right">0.2353</td>
+<td align="right">0.0588</td>
+</tr>
+</tbody></table>
+<p>Then, create conditional probability tables for bigram model (set unknown word count equal to 1).<br>Here I began with a word count table:<br>$w_n$ | Alice | admired | Dorothy | every | dwarf | cheered | &lt;/S&gt; | &lt;UNK&gt;<br>—|—:|—:|—:|—:|—:|—:|—:|—:<br><strong>&lt;S&gt;</strong> | 1 | 0 | 2 | 1 | 0 | 0 | 0 | 1<br><strong>Alice</strong> | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1<br><strong>admired</strong> | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 1<br><strong>Dorothy</strong> | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1<br><strong>every</strong> | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1<br><strong>dwarf</strong> | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1<br><strong>cheered</strong> | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 1<br><strong>&lt;UNK&gt;</strong> | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 </p>
+<p>According to this table, the conditional probability table for unsmoothed bigram model would be:<br>$P(w_n |w_{n-1})$ | Alice | admired | Dorothy | every | dwarf | cheered | &lt;/S&gt; | &lt;UNK&gt;<br>—|—:|—:|—:|—:|—:|—:|—:|—:<br><strong>&lt;S&gt;</strong> | 0.2 | 0 | 0.4 | 0.2 | 0 | 0 | 0 | 0.2<br><strong>Alice</strong> | 0 | 0.5 | 0 | 0 | 0 | 0 | 0 | 0.5<br><strong>admired</strong> | 0 | 0 | 0.3333 | 0.3333 | 0 | 0 | 0 | 0.3333<br><strong>Dorothy</strong> | 0 | 0.25 | 0 | 0 | 0 | 0.25 | 0.25 | 0.25<br><strong>every</strong> | 0 | 0 | 0 | 0 | 0.6667 | 0 | 0 | 0.3333<br><strong>dwarf</strong> | 0 | 0 | 0 | 0 | 0 | 0.3333 | 0.3333 | 0.3333<br><strong>cheered</strong> | 0 | 0 | 0 | 0 | 0 | 0 | 0.6667 | 0.3333<br><strong>&lt;UNK&gt;</strong> | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125</p>
+<p>Using add-1 smoothing, the conditional probability table would be:<br>$w_n$ | Alice | admired | Dorothy | every | dwarf | cheered | &lt;/S&gt; | &lt;UNK&gt;<br>—|—:|—:|—:|—:|—:|—:|—:|—:<br><strong>&lt;S&gt;</strong> | $\frac2{13}=0.1538$ | 0.0769 | 0.2308 | 0.1538 | 0.0769 | 0.0769 | 0.0769 | 0.1538<br><strong>Alice</strong> | 0.1 | 0.2 | 0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.2<br><strong>admired</strong> | 0.0909 | 0.0909 | 0.1818 | 0.1818 | 0.0909 | 0.0909 | 0.0909 | 0.1818<br><strong>Dorothy</strong> | 0.0833 | 0.1667 | 0.0833 | 0.0833 | 0.0833 | 0.1667 | 0.1667 | 0.1667<br><strong>every</strong> | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.2727 | 0.0909 | 0.0909 | 0.1818<br><strong>dwarf</strong> | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.1818 | 0.1818 | 0.1818<br><strong>cheered</strong> | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.0909 | 0.2727 | 0.1818<br><strong>&lt;UNK&gt;</strong> | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125</p>
+<h4 id="1-2-For-each-of-the-above-language-models-compute-the-probability-of-the-following-sentences"><a href="#1-2-For-each-of-the-above-language-models-compute-the-probability-of-the-following-sentences" class="headerlink" title="1.2 For each of the above language models, compute the probability of the following sentences:"></a>1.2 For each of the above language models, compute the probability of the following sentences:</h4><pre><code>Alice cheered
+Goldilocks cheered</code></pre><p>(a) Unigram, unsmoothed<br>$$P(Alice \ cheered) = 0.0588 \times 0.1176 = 0.0069$$</p>
+<p>$$P(Goldilocks \ cheered) = 0.0588 \times 0.1176 = 0.0069$$</p>
+<p>(b) Bigram, unsmoothed</p>
+<p>$$P(Alice \ cheered) = 0.2 \times 0 = 0$$</p>
+<p>$$P(Goldilocks \ cheered) = 0.2 \times 0.125 = 0.025$$</p>
+<p>(c) Bigram, add-1 smoothing</p>
+<p>$$P(Alice \ cheered) = 0.1538 \times 0.1 = 0.0154$$</p>
+<p>$$P(Goldilocks \ cheered) = 0.1538 \times 0.125 = 0.0192$$</p>
+<p>(d) Bigram, interpolation ($λ_1 = λ_2 = 1/2$)</p>
+<p>$$P(Alice \ cheered) = (\frac12 \times 0.2 + \frac12 \times 0.0588)(\frac12 \times 0 + \frac12 \times 0.1176) = 0.0076$$</p>
+<p>$$P(Goldilocks \ cheered) = (\frac12 \times 0.2 + \frac12 \times 0.0588)(\frac12 \times 0.125 + \frac12 \times 0.1176) = 0.0157$$</p>
+<h3 id="2-Hidden-Markov-Models"><a href="#2-Hidden-Markov-Models" class="headerlink" title="2. Hidden Markov Models"></a>2. Hidden Markov Models</h3><p>Given the same short sentences as before, this time tagged with parts of speech:</p>
+<pre><code>Alice/NN admired/VB Dorothy/NN 
+Dorothy/NN admired/VB every/DT dwarf/NN 
+Dorothy/NN cheered/VB 
+every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model-on-the-above-data"><a href="#2-1-Train-a-hidden-Markov-model-on-the-above-data" class="headerlink" title="2.1 Train a hidden Markov model on the above data."></a>2.1 Train a hidden Markov model on the above data.</h4><p>Compute the initial probability distribution $\pi$ with add-1 smoothing:</p>
+<table>
+<thead>
+<tr>
+<th>$t_1$</th>
+<th align="right">NN</th>
+<th align="right">VB</th>
+<th align="right">DT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Count</td>
+<td align="right">3+1=4</td>
+<td align="right">0+1=1</td>
+<td align="right">1+1=2</td>
+</tr>
+<tr>
+<td>$P(t_1)$</td>
+<td align="right">0.5714</td>
+<td align="right">0.1429</td>
+<td align="right">0.2857</td>
+</tr>
+</tbody></table>
+<p>The transition matrix A with add-1 smoothing:</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th align="right">NN</th>
+<th align="right">VB</th>
+<th align="right">DT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>P($t_n$ | $t_{n-1}$)</th>
+<th align="right">NN</th>
+<th align="right">VB</th>
+<th align="right">DT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">0.1429</td>
+<td align="right">0.7143</td>
+<td align="right">0.1429</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">0.4</td>
+<td align="right">0.2</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">0.6</td>
+<td align="right">0.2</td>
+<td align="right">0.2</td>
+</tr>
+</tbody></table>
+<p>And the emission matrix B with add-1 smoothing:</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th align="right">Alice</th>
+<th align="right">admired</th>
+<th align="right">Dorothy</th>
+<th align="right">every</th>
+<th align="right">dwarf</th>
+<th align="right">cheered</th>
+<th align="right">&lt;UNK&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>P($w_n$ | $t_n$)</th>
+<th align="right">Alice</th>
+<th align="right">admired</th>
+<th align="right">Dorothy</th>
+<th align="right">every</th>
+<th align="right">dwarf</th>
+<th align="right">cheered</th>
+<th align="right">&lt;UNK&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">0.1429</td>
+<td align="right">0.0714</td>
+<td align="right">0.2857</td>
+<td align="right">0.0714</td>
+<td align="right">0.2143</td>
+<td align="right">0.0714</td>
+<td align="right">0.1429</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">0.0833</td>
+<td align="right">0.25</td>
+<td align="right">0.0833</td>
+<td align="right">0.0833</td>
+<td align="right">0.0833</td>
+<td align="right">0.25</td>
+<td align="right">0.1667</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">0.1</td>
+<td align="right">0.1</td>
+<td align="right">0.1</td>
+<td align="right">0.3</td>
+<td align="right">0.1</td>
+<td align="right">0.1</td>
+<td align="right">0.2</td>
+</tr>
+</tbody></table>
+<h4 id="2-2-Use-the-forward-algorithm-to-compute-the-probability-of-the-following-sentence"><a href="#2-2-Use-the-forward-algorithm-to-compute-the-probability-of-the-following-sentence" class="headerlink" title="2.2 Use the forward algorithm to compute the probability of the following sentence:"></a>2.2 Use the forward algorithm to compute the probability of the following sentence:</h4><pre><code>Alice cheered </code></pre><p>With forward algorithm:</p>
+<p>$$\alpha_1(j)=\pi_jb_j(o_1)$$</p>
+<p>$$\alpha_t(j)=\sum_{i=1}^N \alpha_{t-1}(i)a_{ij}b_j(o_t)$$</p>
+<p>$$P(O|\lambda) = \sum_{i=1}^N \alpha_T(i)$$</p>
+<p>Fill in the forward trellis below:</p>
+<table>
+<thead>
+<tr>
+<th>$\alpha_t(j)$</th>
+<th align="right">Alice</th>
+<th align="right">cheered</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">$0.5714 \times 0.1429=0.08165$</td>
+<td align="right">0.002397</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">$0.1429 \times 0.0833=0.0119$</td>
+<td align="right">0.01660</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">$0.2857 \times 0.1=0.02857$</td>
+<td align="right">0.002214</td>
+</tr>
+</tbody></table>
+<p>Note:<br>$ \alpha_2(NN) = (0.08165 \times 0.1429 + 0.0119 \times 0.4 + 0.02857 \times 0.6)\times0.0714 = 0.002397$<br>$ \alpha_2(VB) = (0.08165 \times 0.7143 + 0.0119 \times 0.2 + 0.02857 \times 0.2)\times0.25 = 0.01660$<br>$ \alpha_2(DT) = (0.08165 \times 0.1429 + 0.0119 \times 0.4 + 0.02857 \times 0.2)\times0.1 = 0.002214$</p>
+<p>Therefore, the probability of the sentence is $P(Alice \ cheered|\lambda) = 0.002397 + 0.01660 + 0.002214 = 0.0212$</p>
+<h4 id="2-3-Use-the-Viterbi-algorithm-to-compute-the-best-tag-sequence-for-the-following-sentence"><a href="#2-3-Use-the-Viterbi-algorithm-to-compute-the-best-tag-sequence-for-the-following-sentence" class="headerlink" title="2.3  Use the Viterbi algorithm to compute the best tag sequence for the following sentence:"></a>2.3  Use the Viterbi algorithm to compute the best tag sequence for the following sentence:</h4><pre><code>Goldilocks cheered</code></pre><p>Fill in the Viterbi trellis below:<br>Viterbi | Goldilocks | cheered |<br>— | —: | —: |<br>NN | $0.5714 \times 0.1429=0.08165$ | $max(0.00083, 0.00068, 0.00245)=0.00245$ |<br>VB | $0.1429 \times 0.1667=0.0238$ | $max(0.0146, 0.0012， 0.0029)=0.0146$ |<br>DT | $0.2857 \times 0.2=0.0571$ | $max(0.00117, 0.00095， 0.00114)=0.00117$ | </p>
+<p>Example for $Viterbi[s, 2]$:</p>
+<p>$Viterbi[NN, 2] = max(0.08165\times0.1429\times0.0714=0.00083, 0.0238\times0.4\times0.0714=0.00068, 0.0571\times0.6\times0.0714=0.00245)$</p>
+<p>$backpointer[NN, 2]=argmax(0.00083, 0.00068, 0.00245)=3$</p>
+<table>
+<thead>
+<tr>
+<th>backpointer</th>
+<th align="right">Goldilocks</th>
+<th align="right">cheered</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NN</td>
+<td align="right">0</td>
+<td align="right">3 (DT)</td>
+</tr>
+<tr>
+<td>VB</td>
+<td align="right">0</td>
+<td align="right">1 (NN)</td>
+</tr>
+<tr>
+<td>DT</td>
+<td align="right">0</td>
+<td align="right">1 (NN)</td>
+</tr>
+</tbody></table>
+<p>Therefore, from the Viterbi trellis the best path probability at time 2 (cheered) is 0.0146. Accordingly, from the backpointer table the best tag sequence in forward order is [NN, VB]</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing (3rd ed. draft), Dan Jurafsky and James H. Martin</a></p>
 
       
@@ -257,7 +545,7 @@
 <h1 id="Naive-Bayes-Classifier-and-Evaluation"><a href="#Naive-Bayes-Classifier-and-Evaluation" class="headerlink" title="Naive Bayes Classifier and Evaluation"></a>Naive Bayes Classifier and Evaluation</h1></div>
 
 <h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><p>The source code has been posted in my <a href="https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA2" target="_blank" rel="noopener">github</a></p>
-<p>Basic Naive Bayes function: $$P(C|w)=\frac{P(W|C)P(C)}{P(W)}$$<br>$$P(C|W) \propto P(W|C)P(C),$$</p>
+<p>Basic Naive Bayes function: $$P(C|W)=\frac{P(W|C)P(C)}{P(W)}$$<br>$$P(C|W) \propto P(W|C)P(C),$$</p>
 <p>where $P(W|C)$ is called as likelihood and  $P(C)$ as prior.</p>
 <h3 id="1-Training-Function"><a href="#1-Training-Function" class="headerlink" title="1. Training Function"></a>1. Training Function</h3><p>To collect the word counts, we need to first split the text in the training set. In this case, I used regular expression <strong>‘[^A-Za-z\‘]+’</strong> as the seperator. Specifically, it will discard all non-letters except for single quote because some word with quote may have different meanings such as “I’m”, “That’s”, etc.</p>
 <p>Then, the class initialization was changed. I used set to collect all the features, and use variable <em>class_count</em> to collect class numbers. Inside the train function, it can visit every seperate word and generate word counts based on the document’s class. Accordingly, it will caculate the priors and likelihoods.</p>
