@@ -50,19 +50,19 @@
     <link href="http://yoursite.com/2020/03/06/N-grams-and-HMM/"/>
     <id>http://yoursite.com/2020/03/06/N-grams-and-HMM/</id>
     <published>2020-03-06T22:06:23.000Z</published>
-    <updated>2020-03-11T19:05:27.929Z</updated>
+    <updated>2020-03-11T19:54:13.306Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div align=&quot;center&quot;&gt;
+      &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM&quot;&gt;&lt;a
-        
-      
+&lt;h1 id=&quot;Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM&quot;&gt;&lt;a href=&quot;#Language-Modeling-and-Sequence-Labeling-N-grams-and-HMM&quot; class=&quot;headerlink&quot; title=&quot;Language Modeling and Sequence Labeling (N-grams and HMM)&quot;&gt;&lt;/a&gt;Language Modeling and Sequence Labeling (N-grams and HMM)&lt;/h1&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;Working-Example&quot;&gt;&lt;a href=&quot;#Working-Example&quot; class=&quot;headerlink&quot; title=&quot;Working Example&quot;&gt;&lt;/a&gt;Working Example&lt;/h2&gt;&lt;h3 id=&quot;1-N-grams&quot;&gt;&lt;a href=&quot;#1-N-grams&quot; class=&quot;headerlink&quot; title=&quot;1. N-grams&quot;&gt;&lt;/a&gt;1. N-grams&lt;/h3&gt;&lt;p&gt;Given the following short sentences:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Alice admired Dorothy 
+Dorothy admired every dwarf 
+Dorothy cheered 
+every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
