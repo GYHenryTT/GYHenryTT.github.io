@@ -489,4 +489,55 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
         <tag>Gradient Descent</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Deep Learning Projects</title>
+    <url>/2018/01/11/Deep-Learning-Projects/</url>
+    <content><![CDATA[<h2 id="1-Convolution-Neural-Networks-CNN"><a href="#1-Convolution-Neural-Networks-CNN" class="headerlink" title="1. Convolution Neural Networks (CNN)"></a>1. Convolution Neural Networks (CNN)</h2><p>Source codes have been uploaded to my <a href="https://github.com/GYHenryTT/Deep-Learning-Projects" target="_blank" rel="noopener">github</a></p>
+<a id="more"></a>
+
+
+
+	<div class="row">
+    <embed src="Report_CNN.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<h2 id="2-Recurrent-Neural-Networks-RNN"><a href="#2-Recurrent-Neural-Networks-RNN" class="headerlink" title="2. Recurrent Neural Networks (RNN)"></a>2. Recurrent Neural Networks (RNN)</h2>
+
+	<div class="row">
+    <embed src="Report_RNN.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<h2 id="3-Restricted-Boltzmann-Machines-RBM"><a href="#3-Restricted-Boltzmann-Machines-RBM" class="headerlink" title="3. Restricted Boltzmann Machines (RBM)"></a>3. Restricted Boltzmann Machines (RBM)</h2>
+
+	<div class="row">
+    <embed src="Report_RBM.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<h2 id="4-Reinforcement-Learning"><a href="#4-Reinforcement-Learning" class="headerlink" title="4. Reinforcement Learning"></a>4. Reinforcement Learning</h2>
+
+	<div class="row">
+    <embed src="Final_Report.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>CNN</tag>
+        <tag>RNN</tag>
+        <tag>RBM</tag>
+        <tag>Reinforcement Learning</tag>
+      </tags>
+  </entry>
 </search>
