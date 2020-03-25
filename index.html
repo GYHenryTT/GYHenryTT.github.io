@@ -115,26 +115,9 @@
 
 <h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><p>Source code can be found on my <a href="https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA3" target="_blank" rel="noopener">Github</a></p>
 <h3 id="1-Bigram-model"><a href="#1-Bigram-model" class="headerlink" title="1. Bigram model"></a>1. Bigram model</h3><p>My bigram model has a different word dictionary from unigram model. I set 0 as the index of STOP word, and for the other words, index is in alphabetical order. In terms of <strong>generateWord(self, context)</strong> function, I used <strong>numpy.random.choice</strong> to generate next word according to the bigram conditional probabilities.</p>
-<h3 id="2-Add-k-smoothing-bigram-model"><a href="#2-Add-k-smoothing-bigram-model" class="headerlink" title="2. Add-k smoothing bigram model"></a>2. Add-k smoothing bigram model</h3><p>In this model, I set k equals to 0.002 which is the best k I got from grid search (mentioned afterwards). To avoid memory error, I kept using sparse matrix to store non-zero word counts. The zero word probability will be processed inside the <strong>getWordProbability</strong> and <strong>generateWord</strong> functions. The rest of code is similar to Bigram model without smoothing.</p>
-<h3 id="3-Bigram-model-with-interpolation"><a href="#3-Bigram-model-with-interpolation" class="headerlink" title="3. Bigram model with interpolation"></a>3. Bigram model with interpolation</h3><p>This model combines bigram model without smoothing and Unigram model. Because I had generated different word dictionary in bigram model, in this case, I adjusted the index of Unigram word dictionary (moving the STOP sign to the first of word dictionary).</p>
-<h2 id="Result-Evaluation"><a href="#Result-Evaluation" class="headerlink" title="Result Evaluation"></a>Result Evaluation</h2><h3 id="1-Bigram-without-smoothing"><a href="#1-Bigram-without-smoothing" class="headerlink" title="1. Bigram without smoothing"></a>1. Bigram without smoothing</h3><p>The evaluation for bigram model without smoothing is as followed:</p>
-<p><img src="/2020/03/25/N-Grams-Project/bigram.png" alt="avatar"></p>
-<p>The testing set and jumbled sentences have infinite value of perplexity because the sentence may contain some words with zero conditional probabilities. The training set perplexity is very small (around 81.5), but at the same time it had a low accuracy and high Word Error Rate (WER).</p>
-<h3 id="2-Bigram-with-add-k-smoothing"><a href="#2-Bigram-with-add-k-smoothing" class="headerlink" title="2. Bigram with add-k smoothing"></a>2. Bigram with add-k smoothing</h3><p>For k equals to 1, the model gave the following results:</p>
-<p><img src="/2020/03/25/N-Grams-Project/bigram_1.png" alt="avatar"></p>
-<p>With smoothing, the model had much higher perplexity in training set. This may be due to the effects of the large amount of zero-count words. The model alread had high accuracy and low WER, however, it is worth to find a best k to improve model performance. Accordingly, I made a two-step grid search. First, I set the k equals to [0.0001, 0.001, 0.01, 0.1, 1, 2] in order to have a general image of how model performance changed. The result is shown below:</p>
-<p><img src="/2020/03/25/N-Grams-Project/grid_search1.png" alt="avatar"></p>
-<p>From the first grid search, I narrowed down my searching scale and continued a more detailed searching with k from the list [0.001 to 0.01]. Finally, I got a dataframe:</p>
-<p><img src="/2020/03/25/N-Grams-Project/grid_search2.png" alt="avatar"></p>
-<p>The accuracy and WER among these ks have no significant difference. So I chose the k (0.002) with the lowest perplexity in both test set and jumbled sentences. Because the performance did not change a lot, I decided not to go deeper in the grid search. Then, I ran the tester again:</p>
-<p><img src="/2020/03/25/N-Grams-Project/bigram_0002.png" alt="avatar"></p>
-<p>It got much better performance in perplexity than k = 1 model.</p>
-<h3 id="3-Bigram-with-interpolation"><a href="#3-Bigram-with-interpolation" class="headerlink" title="3. Bigram with interpolation"></a>3. Bigram with interpolation</h3><p>Evaluation for this model:</p>
-<p><img src="/2020/03/25/N-Grams-Project/bigram_interpolation.png" alt="avatar"></p>
-<p>It had the better performance than any other models I got. Instead of EM (expectation-maximization) Algorithm, I applied grid search again to find the best $\lambda$s: </p>
-<p><img src="/2020/03/25/N-Grams-Project/grid_search3.png" alt="avatar"><br><img src="/2020/03/25/N-Grams-Project/grid_search4.png" alt="avatar"><br><img src="/2020/03/25/N-Grams-Project/grid_search5.png" alt="avatar"></p>
-<p>The best lambda is 0.66 or 0.67. In this case, I chose 0.67 as the best and set this value as default lambda in my code.</p>
-
+      
+      <a class="article-more-link" href="/2020/03/25/N-Grams-Project/">Read more</a>
+      
       
       <!-- reward -->
       
