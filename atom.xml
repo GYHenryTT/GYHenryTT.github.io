@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-25T04:17:48.301Z</updated>
+  <updated>2020-03-25T04:22:45.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,29 @@
     <link href="http://yoursite.com/2020/03/25/N-Grams-Project/"/>
     <id>http://yoursite.com/2020/03/25/N-Grams-Project/</id>
     <published>2020-03-25T04:17:48.000Z</published>
-    <updated>2020-03-25T04:17:48.301Z</updated>
+    <updated>2020-03-25T04:22:45.211Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div align=&quot;center&quot;&gt;
+
+&lt;h1 id=&quot;CS114-Spring-2020-Programing-Assignment-3&quot;&gt;&lt;a href=&quot;#CS114-Spring-2020-Programing-Assignment-3&quot;
+        
+      
     
     </summary>
     
     
+    
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
+    
+      <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
     
   </entry>
   
@@ -83,11 +99,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
     
     
     
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
       <category term="Hidden Markov Models" scheme="http://yoursite.com/tags/Hidden-Markov-Models/"/>
     
@@ -118,11 +134,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
   </entry>
   
@@ -147,11 +163,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     
