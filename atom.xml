@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-07T04:24:24.038Z</updated>
+  <updated>2020-03-25T04:17:48.301Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>N Grams Project</title>
+    <link href="http://yoursite.com/2020/03/25/N-Grams-Project/"/>
+    <id>http://yoursite.com/2020/03/25/N-Grams-Project/</id>
+    <published>2020-03-25T04:17:48.000Z</published>
+    <updated>2020-03-25T04:17:48.301Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Model Evaluation</title>
@@ -50,7 +65,7 @@
     <link href="http://yoursite.com/2020/03/06/N-grams-and-HMM/"/>
     <id>http://yoursite.com/2020/03/06/N-grams-and-HMM/</id>
     <published>2020-03-06T22:06:23.000Z</published>
-    <updated>2020-03-11T19:54:13.306Z</updated>
+    <updated>2020-03-24T20:10:34.901Z</updated>
     
     <summary type="html">
     
@@ -68,11 +83,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
     
     
     
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
       <category term="Hidden Markov Models" scheme="http://yoursite.com/tags/Hidden-Markov-Models/"/>
     
@@ -103,11 +118,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
     
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
   </entry>
   
@@ -132,11 +147,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
     
     
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     
@@ -149,11 +164,12 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
     <link href="http://yoursite.com/2018/01/11/Deep-Learning-Projects/"/>
     <id>http://yoursite.com/2018/01/11/Deep-Learning-Projects/</id>
     <published>2018-01-12T04:16:28.000Z</published>
-    <updated>2020-03-12T04:21:56.858Z</updated>
+    <updated>2020-03-12T04:30:45.438Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-Convolution-Neural-Networks-CNN&quot;&gt;&lt;a href=&quot;#1-Convolution-Neural-Networks-CNN&quot; class=&quot;headerlink&quot; title=&quot;1. Convolution Neural Networks (CNN)&quot;&gt;&lt;/a&gt;1. Convolution Neural Networks (CNN)&lt;/h2&gt;&lt;p&gt;Source codes have been uploaded to my &lt;a href=&quot;https://github.com/GYHenryTT/Deep-Learning-Projects&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Source codes have been uploaded to my &lt;a href=&quot;https://github.com/GYHenryTT/Deep-Learning-Projects&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-Convolution-Neural-Networks-CNN&quot;&gt;&lt;a href=&quot;#1-Convolution-Neural-Networks-CNN&quot; class=&quot;headerlink&quot; title=&quot;1. Convolution Neural Networks (CNN)&quot;&gt;&lt;/a&gt;1. Convolution Neural Networks (CNN)&lt;/h2&gt;
     
     </summary>
     
