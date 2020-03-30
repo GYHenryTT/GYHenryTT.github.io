@@ -32,9 +32,9 @@
 <p>The best lambda is 0.66 or 0.67. In this case, I chose 0.67 as the best and set this value as default lambda in my code.</p>
 ]]></content>
       <tags>
-        <tag>N-grams</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
+        <tag>N-grams</tag>
       </tags>
   </entry>
   <entry>
@@ -353,9 +353,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing (3rd ed. draft), Dan Jurafsky and James H. Martin</a></p>
 ]]></content>
       <tags>
-        <tag>N-grams</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
+        <tag>N-grams</tag>
         <tag>Hidden Markov Models</tag>
       </tags>
   </entry>
@@ -389,9 +389,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
         <category>Project</category>
       </categories>
       <tags>
+        <tag>Naive Bayes</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
-        <tag>Naive Bayes</tag>
       </tags>
   </entry>
   <entry>
@@ -519,9 +519,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
         <category>Learning Journal</category>
       </categories>
       <tags>
+        <tag>Naive Bayes</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
-        <tag>Naive Bayes</tag>
         <tag>Logistic Regression</tag>
         <tag>Gradient Descent</tag>
       </tags>
@@ -535,7 +535,7 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
 
 
 	<div class="row">
-    <embed src="Report" width="100%" height="550" type="application/pdf">
+    <embed src="Report_of_IS-DEA_Project.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
