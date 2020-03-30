@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-30T05:59:59.636Z</updated>
+  <updated>2020-03-30T05:48:04.980Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>IS/NIS-DEA Project</title>
-    <link href="http://yoursite.com/2020/03/30/IS-DEA-Project/"/>
-    <id>http://yoursite.com/2020/03/30/IS-DEA-Project/</id>
-    <published>2020-03-30T05:51:07.000Z</published>
-    <updated>2020-03-30T05:59:59.636Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;IS-NIS-DEA-Project-colleborated-with-Amazon-employee&quot;&gt;&lt;a href=&quot;#IS-NIS-DEA-Project-colleborated-with-Amazon-employee&quot; class=&quot;headerlink&quot; title=&quot;IS/NIS-DEA Project colleborated with Amazon employee&quot;&gt;&lt;/a&gt;IS/NIS-DEA Project colleborated with Amazon employee&lt;/h2&gt;&lt;p&gt;Use Tableau to analysis delivery miss root cause and apply random forest to forecast ‘obsolete’ sign of products. Source code for random forest and data processing is in my &lt;a href=&quot;https://github.com/GYHenryTT/NIS-DEA-Model&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Amazon" scheme="http://yoursite.com/tags/Amazon/"/>
-    
-      <category term="Random Forest" scheme="http://yoursite.com/tags/Random-Forest/"/>
-    
-  </entry>
   
   <entry>
     <title>N Grams Project</title>
@@ -190,6 +169,29 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     
       <category term="Gradient Descent" scheme="http://yoursite.com/tags/Gradient-Descent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IS/NIS-DEA Project</title>
+    <link href="http://yoursite.com/2018/09/01/IS-DEA-Project/"/>
+    <id>http://yoursite.com/2018/09/01/IS-DEA-Project/</id>
+    <published>2018-09-01T05:51:07.000Z</published>
+    <updated>2020-03-30T06:02:01.264Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;IS-NIS-DEA-Project-colleborated-with-Amazon-employee&quot;&gt;&lt;a href=&quot;#IS-NIS-DEA-Project-colleborated-with-Amazon-employee&quot; class=&quot;headerlink&quot; title=&quot;IS/NIS-DEA Project colleborated with Amazon employee&quot;&gt;&lt;/a&gt;IS/NIS-DEA Project colleborated with Amazon employee&lt;/h2&gt;&lt;p&gt;Use Tableau to analysis delivery miss root cause and apply random forest to forecast ‘obsolete’ sign of products. Source code for random forest and data processing is in my &lt;a href=&quot;https://github.com/GYHenryTT/NIS-DEA-Model&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Amazon" scheme="http://yoursite.com/tags/Amazon/"/>
+    
+      <category term="Random Forest" scheme="http://yoursite.com/tags/Random-Forest/"/>
+    
+      <category term="Tableau" scheme="http://yoursite.com/tags/Tableau/"/>
     
   </entry>
   
