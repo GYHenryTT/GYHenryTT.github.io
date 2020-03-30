@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-25T04:24:27.432Z</updated>
+  <updated>2020-03-30T05:48:04.980Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://yoursite.com/2020/03/25/N-Grams-Project/"/>
     <id>http://yoursite.com/2020/03/25/N-Grams-Project/</id>
     <published>2020-03-25T04:17:48.000Z</published>
-    <updated>2020-03-25T04:24:27.432Z</updated>
+    <updated>2020-03-30T05:48:04.980Z</updated>
     
     <summary type="html">
     
       &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;CS114-Spring-2020-Programing-Assignment-3&quot;&gt;&lt;a href=&quot;#CS114-Spring-2020-Programing-Assignment-3&quot; class=&quot;headerlink&quot; title=&quot;CS114 (Spring 2020) Programing Assignment 3&quot;&gt;&lt;/a&gt;CS114 (Spring 2020) Programing Assignment 3&lt;/h1&gt;&lt;h2 id=&quot;N-gram-Language-Models-and-Evaluation&quot;&gt;&lt;a href=&quot;#N-gram-Language-Models-and-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;N-gram Language Models and Evaluation&quot;&gt;&lt;/a&gt;N-gram Language Models and Evaluation&lt;/h2&gt;&lt;h3 id=&quot;Heyuan-Henry-Gao&quot;&gt;&lt;a href=&quot;#Heyuan-Henry-Gao&quot; class=&quot;headerlink&quot; title=&quot;Heyuan (Henry) Gao&quot;&gt;&lt;/a&gt;Heyuan (Henry) Gao&lt;/h3&gt;&lt;/div&gt;
+&lt;h1 id=&quot;N-gram-Language-Models-and-Evaluation&quot;&gt;&lt;a href=&quot;#N-gram-Language-Models-and-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;N-gram Language Models and Evaluation&quot;&gt;&lt;/a&gt;N-gram Language Models and Evaluation&lt;/h1&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;Program-Instruction&quot;&gt;&lt;a href=&quot;#Program-Instruction&quot; class=&quot;headerlink&quot; title=&quot;Program Instruction&quot;&gt;&lt;/a&gt;Program Instruction&lt;/h2&gt;&lt;p&gt;Source code can be found on my &lt;a href=&quot;https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;1-Bigram-model&quot;&gt;&lt;a href=&quot;#1-Bigram-model&quot; class=&quot;headerlink&quot; title=&quot;1. Bigram model&quot;&gt;&lt;/a&gt;1. Bigram model&lt;/h3&gt;&lt;p&gt;My bigram model has a different word dictionary from unigram model. I set 0 as the index of STOP word, and for the other words, index is in alphabetical order. In terms of &lt;strong&gt;generateWord(self, context)&lt;/strong&gt; function, I used &lt;strong&gt;numpy.random.choice&lt;/strong&gt; to generate next word according to the bigram conditional probabilities.&lt;/p&gt;
@@ -36,11 +36,11 @@
     
     
     
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
   </entry>
   
@@ -96,11 +96,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
     
     
     
+      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
-    
-      <category term="N-grams" scheme="http://yoursite.com/tags/N-grams/"/>
     
       <category term="Hidden Markov Models" scheme="http://yoursite.com/tags/Hidden-Markov-Models/"/>
     
@@ -131,11 +131,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Project" scheme="http://yoursite.com/categories/Project/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
   </entry>
   
@@ -160,11 +160,11 @@ every dwarf cheered&lt;/code&gt;&lt;/pre&gt;
       <category term="Learning Journal" scheme="http://yoursite.com/categories/Learning-Journal/"/>
     
     
-      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Naive Bayes" scheme="http://yoursite.com/tags/Naive-Bayes/"/>
     
       <category term="Logistic Regression" scheme="http://yoursite.com/tags/Logistic-Regression/"/>
     

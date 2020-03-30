@@ -5,7 +5,7 @@
     <url>/2020/03/25/N-Grams-Project/</url>
     <content><![CDATA[<div align="center">
 
-<h1 id="CS114-Spring-2020-Programing-Assignment-3"><a href="#CS114-Spring-2020-Programing-Assignment-3" class="headerlink" title="CS114 (Spring 2020) Programing Assignment 3"></a>CS114 (Spring 2020) Programing Assignment 3</h1><h2 id="N-gram-Language-Models-and-Evaluation"><a href="#N-gram-Language-Models-and-Evaluation" class="headerlink" title="N-gram Language Models and Evaluation"></a>N-gram Language Models and Evaluation</h2><h3 id="Heyuan-Henry-Gao"><a href="#Heyuan-Henry-Gao" class="headerlink" title="Heyuan (Henry) Gao"></a>Heyuan (Henry) Gao</h3></div>
+<h1 id="N-gram-Language-Models-and-Evaluation"><a href="#N-gram-Language-Models-and-Evaluation" class="headerlink" title="N-gram Language Models and Evaluation"></a>N-gram Language Models and Evaluation</h1></div>
 
 <h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><p>Source code can be found on my <a href="https://github.com/GYHenryTT/Computational-Linguistic/tree/master/PA3" target="_blank" rel="noopener">Github</a></p>
 <h3 id="1-Bigram-model"><a href="#1-Bigram-model" class="headerlink" title="1. Bigram model"></a>1. Bigram model</h3><p>My bigram model has a different word dictionary from unigram model. I set 0 as the index of STOP word, and for the other words, index is in alphabetical order. In terms of <strong>generateWord(self, context)</strong> function, I used <strong>numpy.random.choice</strong> to generate next word according to the bigram conditional probabilities.</p>
@@ -32,9 +32,9 @@
 <p>The best lambda is 0.66 or 0.67. In this case, I chose 0.67 as the best and set this value as default lambda in my code.</p>
 ]]></content>
       <tags>
+        <tag>N-grams</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
-        <tag>N-grams</tag>
       </tags>
   </entry>
   <entry>
@@ -353,9 +353,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing (3rd ed. draft), Dan Jurafsky and James H. Martin</a></p>
 ]]></content>
       <tags>
+        <tag>N-grams</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
-        <tag>N-grams</tag>
         <tag>Hidden Markov Models</tag>
       </tags>
   </entry>
@@ -389,9 +389,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
         <category>Project</category>
       </categories>
       <tags>
-        <tag>Naive Bayes</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
+        <tag>Naive Bayes</tag>
       </tags>
   </entry>
   <entry>
@@ -519,9 +519,9 @@ every/DT dwarf/NN cheered/VB</code></pre><h4 id="2-1-Train-a-hidden-Markov-model
         <category>Learning Journal</category>
       </categories>
       <tags>
-        <tag>Naive Bayes</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
+        <tag>Naive Bayes</tag>
         <tag>Logistic Regression</tag>
         <tag>Gradient Descent</tag>
       </tags>
