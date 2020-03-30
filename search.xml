@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>IS/NIS-DEA Project</title>
+    <url>/2020/03/30/IS-DEA-Project/</url>
+    <content><![CDATA[<h2 id="IS-NIS-DEA-Project-colleborated-with-Amazon-employee"><a href="#IS-NIS-DEA-Project-colleborated-with-Amazon-employee" class="headerlink" title="IS/NIS-DEA Project colleborated with Amazon employee"></a>IS/NIS-DEA Project colleborated with Amazon employee</h2><p>Use Tableau to analysis delivery miss root cause and apply random forest to forecast ‘obsolete’ sign of products. Source code for random forest and data processing is in my <a href="https://github.com/GYHenryTT/NIS-DEA-Model" target="_blank" rel="noopener">Github</a></p>
+<a id="more"></a>
+
+
+
+	<div class="row">
+    <embed src="Report" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+]]></content>
+      <tags>
+        <tag>Amazon</tag>
+        <tag>Random Forest</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>N Grams Project</title>
     <url>/2020/03/25/N-Grams-Project/</url>
     <content><![CDATA[<div align="center">
