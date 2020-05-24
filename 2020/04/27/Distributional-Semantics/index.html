@@ -82,6 +82,8 @@
 
 <h2 id="1-Create-distributional-semantic-word-vectors"><a href="#1-Create-distributional-semantic-word-vectors" class="headerlink" title="1 Create distributional semantic word vectors"></a>1 Create distributional semantic word vectors</h2><h3 id="Program-Introduction"><a href="#Program-Introduction" class="headerlink" title="Program Introduction"></a>Program Introduction</h3><p>Program details can be seen in Section_1.py. </p>
 <p>In this section, I created a class <em>Embedding</em> to complete all the functions needed where <em>word_to_vector</em> function can generate the co-occurrence matrix and PPMI matrix based on the small artificial corpus. Additionally, function <em>get_word_vector</em> is used to print both the count vector and PPMI weighted vector according to the word input. Function <em>euclidean_distance</em> can compute euclidean distance between any two words in the corpus. </p>
+<a id="more"></a>
+
 <h3 id="Compare-the-word-vector-before-and-after-PPMI-reweighting"><a href="#Compare-the-word-vector-before-and-after-PPMI-reweighting" class="headerlink" title="Compare the word vector before and after PPMI reweighting"></a>Compare the word vector before and after PPMI reweighting</h3><p>The difference between original count vector and PPMI weighted vector for ‘dogs’ is shown below:</p>
 <p><img src="/2020/04/27/Distributional-Semantics/dogs_vector_1.png" alt="avatar"></p>
 <p>As we can seen in this result, PPMI set 0 value in context words including ‘dogs’, ‘feed’, ‘like’, ‘men’ and ‘women’. These are consistent with count vector (mostly count for 1) except for ‘like’ (count for 11), which makes sense because we are using co-occurrance based on bigrams and from the corpus we could not see many “(‘dogs’, ‘like’)”s. </p>

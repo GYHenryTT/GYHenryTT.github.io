@@ -84,6 +84,8 @@
 <td align="left">RIGHT-ARC</td>
 </tr>
 </tbody></table>
+<a id="more"></a>
+
 <h3 id="2-A-sentence-containing-n-words-will-be-parsed-in-how-many-steps"><a href="#2-A-sentence-containing-n-words-will-be-parsed-in-how-many-steps" class="headerlink" title="2. A sentence containing $n$ words will be parsed in how many steps"></a>2. A sentence containing $n$ words will be parsed in how many steps</h3><p>For each word of the sentence, it need first be shifted onto the stack and then reduced by right\left arc. Therefore, there would be $2*n$ parsing steps for a sentence containing $n$ words regardless of the initial configuration.</p>
 <h3 id="Check-Dependencies-Error"><a href="#Check-Dependencies-Error" class="headerlink" title="Check Dependencies Error"></a>Check Dependencies Error</h3><p>Dependencies Error:</p>
 <pre><code>Prepositional Phrase Attachment Error
@@ -162,6 +164,8 @@ Coordination Attachment Error</code></pre><p>Given four sentences, each one has 
 
 <h2 id="1-Create-distributional-semantic-word-vectors"><a href="#1-Create-distributional-semantic-word-vectors" class="headerlink" title="1 Create distributional semantic word vectors"></a>1 Create distributional semantic word vectors</h2><h3 id="Program-Introduction"><a href="#Program-Introduction" class="headerlink" title="Program Introduction"></a>Program Introduction</h3><p>Program details can be seen in Section_1.py. </p>
 <p>In this section, I created a class <em>Embedding</em> to complete all the functions needed where <em>word_to_vector</em> function can generate the co-occurrence matrix and PPMI matrix based on the small artificial corpus. Additionally, function <em>get_word_vector</em> is used to print both the count vector and PPMI weighted vector according to the word input. Function <em>euclidean_distance</em> can compute euclidean distance between any two words in the corpus. </p>
+<a id="more"></a>
+
 <h3 id="Compare-the-word-vector-before-and-after-PPMI-reweighting"><a href="#Compare-the-word-vector-before-and-after-PPMI-reweighting" class="headerlink" title="Compare the word vector before and after PPMI reweighting"></a>Compare the word vector before and after PPMI reweighting</h3><p>The difference between original count vector and PPMI weighted vector for ‘dogs’ is shown below:</p>
 <p><img src="/2020/04/27/Distributional-Semantics/dogs_vector_1.png" alt="avatar"></p>
 <p>As we can seen in this result, PPMI set 0 value in context words including ‘dogs’, ‘feed’, ‘like’, ‘men’ and ‘women’. These are consistent with count vector (mostly count for 1) except for ‘like’ (count for 11), which makes sense because we are using co-occurrance based on bigrams and from the corpus we could not see many “(‘dogs’, ‘like’)”s. </p>
@@ -200,11 +204,11 @@ Coordination Attachment Error</code></pre><p>Given four sentences, each one has 
 <p>First of all, these methods all have significant higher accuracy than the random guessing (20%). Another interesting part is that concatenating method also brings a high accuracy (0.422). The reason I think may be that concatenating vectors contain all the information from the paired vectors, concatenating does not change anything on the two vectors, the advantage of which is protecting the information but at the same time the data is kind of redundant. In my opinion, the concatenating method is a good baseline model in analogy. Comparing to concatenating, subtracting, adding and multiplying methods all convert the information to a new form, which intuitively thinking may cause information loss. However, subtraction decribes the direction between two vectors. Because it emphasizes this essential part though losing some other information, we could expect a higher accuracy with this method. The performance of the rest two methods, adding and multiplying, are not very saticfying. This phenomenon is similar to feature reduction or engineering, new information from these methods is not enough to make up for lost information. </p>
 ]]></content>
       <tags>
-        <tag>NLP</tag>
-        <tag>Computational Linguistics</tag>
         <tag>Co-occurrence Matrix</tag>
         <tag>PPMI Matrix</tag>
         <tag>Synonym Detection</tag>
+        <tag>NLP</tag>
+        <tag>Computational Linguistics</tag>
       </tags>
   </entry>
   <entry>
@@ -215,6 +219,8 @@ Coordination Attachment Error</code></pre><p>Given four sentences, each one has 
 <h1 id="Part-of-speech-Tagging-with-Hidden-Markov-Models"><a href="#Part-of-speech-Tagging-with-Hidden-Markov-Models" class="headerlink" title="Part-of-speech Tagging with Hidden Markov Models"></a>Part-of-speech Tagging with Hidden Markov Models</h1></div>
 
 <h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><h3 id="Training-function"><a href="#Training-function" class="headerlink" title="Training function"></a>Training function</h3><p>In the train() function, I used <em>word_dict</em> and <em>pos_dict</em> to store words and tags but the value of dictionary is index. This is convenient to create related matrix. And I also created a <em>reversed_pos_dict</em> applied to viterbi function. To save memory space, I generated sparsed matrix for emission B matrix, so there was an extra procedure in viterbi function adding k-smooth method on B matrix. </p>
+<a id="more"></a>
+
 <h3 id="Viterbi-function"><a href="#Viterbi-function" class="headerlink" title="Viterbi function"></a>Viterbi function</h3><p>This function directly deployed viterbi algorithm for a single sentence noted that the input sentence should be a list of word index. The most complex part is recursion step where the algorithm formula is $viterbi[s,t] = \max_{s’=1}^{N} viterbi[s’, t-1] * a_{s’, s}*b_s(O_t)$. However, with broadcasting feature of numpy arrays, the application of this formula in my code is to mutiply viterbi[:, t-1] with shape (s, 1), transition A matrix with shape (s, s) and B($O_s$) with shape (1, s). The result would be a (s, s) matrix where max value of each row is what we need for viterbi[s, t].</p>
 <h2 id="K-selection-and-model-evaluation"><a href="#K-selection-and-model-evaluation" class="headerlink" title="K selection and model evaluation"></a>K selection and model evaluation</h2><p>In this case, I continued using grid search to find the best k of smoothing method. Bellowed is grid searching result for k from 0.1 to 1 with step size 0.1 where we can estimate the best k should be less than 0.1.</p>
 <p><img src="/2020/04/10/Hidden-Markov/Grid_search_1.png" alt="avatar"></p>
@@ -223,9 +229,9 @@ Coordination Attachment Error</code></pre><p>Given four sentences, each one has 
 <p>The accuracy did not change a lot in different ks, so I chose the best k as 0.08. And the final model accuracy is 0.912123.</p>
 ]]></content>
       <tags>
-        <tag>Hidden Markov Model</tag>
         <tag>NLP</tag>
         <tag>Computational Linguistics</tag>
+        <tag>Hidden Markov Model</tag>
       </tags>
   </entry>
   <entry>

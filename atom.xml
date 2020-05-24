@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-24T04:45:33.136Z</updated>
+  <updated>2020-05-24T04:53:08.096Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,19 +21,91 @@
     <link href="http://yoursite.com/2020/05/12/Neural-Network-Parsing/"/>
     <id>http://yoursite.com/2020/05/12/Neural-Network-Parsing/</id>
     <published>2020-05-12T04:00:00.000Z</published>
-    <updated>2020-05-24T04:45:33.136Z</updated>
+    <updated>2020-05-24T04:53:08.096Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div align=&quot;center&quot;&gt;
+      &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;Neural-Transition-Based-Dependency-Parsing&quot;&gt;&lt;a href=&quot;#Neural-Transition-Based-Dependency-Parsing&quot;
-        
-      
+&lt;h1 id=&quot;Neural-Transition-Based-Dependency-Parsing&quot;&gt;&lt;a href=&quot;#Neural-Transition-Based-Dependency-Parsing&quot; class=&quot;headerlink&quot; title=&quot;Neural Transition-Based Dependency Parsing&quot;&gt;&lt;/a&gt;Neural Transition-Based Dependency Parsing&lt;/h1&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;Worked-Example&quot;&gt;&lt;a href=&quot;#Worked-Example&quot; class=&quot;headerlink&quot; title=&quot;Worked Example&quot;&gt;&lt;/a&gt;Worked Example&lt;/h2&gt;&lt;h3 id=&quot;1-Go-through-the-sequence-of-transitions&quot;&gt;&lt;a href=&quot;#1-Go-through-the-sequence-of-transitions&quot; class=&quot;headerlink&quot; title=&quot;1. Go through the sequence of transitions&quot;&gt;&lt;/a&gt;1. Go through the sequence of transitions&lt;/h3&gt;&lt;p&gt;Given the sentence:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;I parsed this sentence correctly&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;Stack&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Buffer&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;New dependency&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Transition&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[I, parsed, this, sentence, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;Initial Configuration&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, I]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[parsed, this, sentence, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SHIFT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, I, parsed]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[this, sentence, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SHIFT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[this, sentence, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;parsed $\rightarrow$ I&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LEFT-ARC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed, this]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[sentence, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SHIFT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed, this, sentence]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SHIFT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed, sentence]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;sentence $\rightarrow$ this&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LEFT-ARC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;parsed $\rightarrow$ sentence&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;RIGHT-ARC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed, correctly]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SHIFT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT, parsed]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;parsed $\rightarrow$ correctly&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;RIGHT-ARC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;[ROOT]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;[]&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;ROOT $\rightarrow$ parsed&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;RIGHT-ARC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
     
     </summary>
     
@@ -54,33 +126,30 @@
     <link href="http://yoursite.com/2020/04/27/Distributional-Semantics/"/>
     <id>http://yoursite.com/2020/04/27/Distributional-Semantics/</id>
     <published>2020-04-27T04:00:00.000Z</published>
-    <updated>2020-05-24T04:42:44.377Z</updated>
+    <updated>2020-05-24T04:53:26.821Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div align=&quot;center&quot;&gt;
+      &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;Distributional-Semantics-Takes-the-SAT&quot;&gt;&lt;a href=&quot;#Distributional-Semantics-Takes-the-SAT&quot; class=&quot;headerlink&quot;
-        
-      
+&lt;h1 id=&quot;Distributional-Semantics-Takes-the-SAT&quot;&gt;&lt;a href=&quot;#Distributional-Semantics-Takes-the-SAT&quot; class=&quot;headerlink&quot; title=&quot;Distributional Semantics Takes the SAT&quot;&gt;&lt;/a&gt;Distributional Semantics Takes the SAT&lt;/h1&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-Create-distributional-semantic-word-vectors&quot;&gt;&lt;a href=&quot;#1-Create-distributional-semantic-word-vectors&quot; class=&quot;headerlink&quot; title=&quot;1 Create distributional semantic word vectors&quot;&gt;&lt;/a&gt;1 Create distributional semantic word vectors&lt;/h2&gt;&lt;h3 id=&quot;Program-Introduction&quot;&gt;&lt;a href=&quot;#Program-Introduction&quot; class=&quot;headerlink&quot; title=&quot;Program Introduction&quot;&gt;&lt;/a&gt;Program Introduction&lt;/h3&gt;&lt;p&gt;Program details can be seen in Section_1.py. &lt;/p&gt;
+&lt;p&gt;In this section, I created a class &lt;em&gt;Embedding&lt;/em&gt; to complete all the functions needed where &lt;em&gt;word_to_vector&lt;/em&gt; function can generate the co-occurrence matrix and PPMI matrix based on the small artificial corpus. Additionally, function &lt;em&gt;get_word_vector&lt;/em&gt; is used to print both the count vector and PPMI weighted vector according to the word input. Function &lt;em&gt;euclidean_distance&lt;/em&gt; can compute euclidean distance between any two words in the corpus. &lt;/p&gt;
     
     </summary>
     
     
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
     
       <category term="Co-occurrence Matrix" scheme="http://yoursite.com/tags/Co-occurrence-Matrix/"/>
     
       <category term="PPMI Matrix" scheme="http://yoursite.com/tags/PPMI-Matrix/"/>
     
       <category term="Synonym Detection" scheme="http://yoursite.com/tags/Synonym-Detection/"/>
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
+    
+      <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
     
   </entry>
   
@@ -89,29 +158,25 @@
     <link href="http://yoursite.com/2020/04/10/Hidden-Markov/"/>
     <id>http://yoursite.com/2020/04/10/Hidden-Markov/</id>
     <published>2020-04-10T04:00:00.000Z</published>
-    <updated>2020-05-24T04:42:46.312Z</updated>
+    <updated>2020-05-24T04:53:27.791Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;div align=&quot;center&quot;&gt;
+      &lt;div align=&quot;center&quot;&gt;
 
-&lt;h1 id=&quot;Part-of-speech-Tagging-with-Hidden-Markov-Models&quot;&gt;&lt;a href=&quot;#Part-of-speech-Tagging-with-Hidden-Markov-Models&quot;
-        
-      
+&lt;h1 id=&quot;Part-of-speech-Tagging-with-Hidden-Markov-Models&quot;&gt;&lt;a href=&quot;#Part-of-speech-Tagging-with-Hidden-Markov-Models&quot; class=&quot;headerlink&quot; title=&quot;Part-of-speech Tagging with Hidden Markov Models&quot;&gt;&lt;/a&gt;Part-of-speech Tagging with Hidden Markov Models&lt;/h1&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;Program-Instruction&quot;&gt;&lt;a href=&quot;#Program-Instruction&quot; class=&quot;headerlink&quot; title=&quot;Program Instruction&quot;&gt;&lt;/a&gt;Program Instruction&lt;/h2&gt;&lt;h3 id=&quot;Training-function&quot;&gt;&lt;a href=&quot;#Training-function&quot; class=&quot;headerlink&quot; title=&quot;Training function&quot;&gt;&lt;/a&gt;Training function&lt;/h3&gt;&lt;p&gt;In the train() function, I used &lt;em&gt;word_dict&lt;/em&gt; and &lt;em&gt;pos_dict&lt;/em&gt; to store words and tags but the value of dictionary is index. This is convenient to create related matrix. And I also created a &lt;em&gt;reversed_pos_dict&lt;/em&gt; applied to viterbi function. To save memory space, I generated sparsed matrix for emission B matrix, so there was an extra procedure in viterbi function adding k-smooth method on B matrix. &lt;/p&gt;
     
     </summary>
     
     
     
-      <category term="Hidden Markov Model" scheme="http://yoursite.com/tags/Hidden-Markov-Model/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Computational Linguistics" scheme="http://yoursite.com/tags/Computational-Linguistics/"/>
+    
+      <category term="Hidden Markov Model" scheme="http://yoursite.com/tags/Hidden-Markov-Model/"/>
     
   </entry>
   
