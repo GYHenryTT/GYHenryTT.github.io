@@ -8,7 +8,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Tag: NLP |  Monologue From a Data Geek
+    Hidden Markov |  Monologue From a Data Geek
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -34,211 +34,192 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
     <main class="content">
       <section class="outer">
-  <article class="articles">
+  <article id="post-Hidden-Markov" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
     
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Hidden Markov
+</h1>
+  
+
+    </header>
     
-    <h1 class="page-type-title">#&nbspNLP</h1>
+
     
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2020" class="archive-year">2020</a>
+    <div class="article-meta">
+      <a href="/2020/04/10/Hidden-Markov/" class="article-date">
+  <time datetime="2020-04-10T04:00:00.000Z" itemprop="datePublished">2020-04-10</time>
+</a>
+      
+      
     </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/12/Neural-Network-Parsing/" class="archive-article-date">
-  <time datetime="2020-05-12T04:00:00.000Z" itemprop="datePublished">05/12</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/05/12/Neural-Network-Parsing/"
-    >Neural Network Parsing</a
-  >
-</h2>
-  
-
-    </header>
     
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dependency-Parsing/" rel="tag">Dependency Parsing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/" rel="tag">Neural Network</a></li></ul>
 
     
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/27/Distributional-Semantics/" class="archive-article-date">
-  <time datetime="2020-04-27T04:00:00.000Z" itemprop="datePublished">04/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/04/27/Distributional-Semantics/"
-    >Distributional Semantics</a
-  >
-</h2>
-  
+    
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Co-occurrence-Matrix/" rel="tag">Co-occurrence Matrix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPMI-Matrix/" rel="tag">PPMI Matrix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Synonym-Detection/" rel="tag">Synonym Detection</a></li></ul>
+
+
+
 
     
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/10/Hidden-Markov/" class="archive-article-date">
-  <time datetime="2020-04-10T04:00:00.000Z" itemprop="datePublished">04/10</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/04/10/Hidden-Markov/"
-    >Hidden Markov</a
-  >
-</h2>
-  
 
-    </header>
-    
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <div align="center">
+
+<h1 id="Part-of-speech-Tagging-with-Hidden-Markov-Models"><a href="#Part-of-speech-Tagging-with-Hidden-Markov-Models" class="headerlink" title="Part-of-speech Tagging with Hidden Markov Models"></a>Part-of-speech Tagging with Hidden Markov Models</h1></div>
+
+<h2 id="Program-Instruction"><a href="#Program-Instruction" class="headerlink" title="Program Instruction"></a>Program Instruction</h2><h3 id="Training-function"><a href="#Training-function" class="headerlink" title="Training function"></a>Training function</h3><p>In the train() function, I used <em>word_dict</em> and <em>pos_dict</em> to store words and tags but the value of dictionary is index. This is convenient to create related matrix. And I also created a <em>reversed_pos_dict</em> applied to viterbi function. To save memory space, I generated sparsed matrix for emission B matrix, so there was an extra procedure in viterbi function adding k-smooth method on B matrix. </p>
+<h3 id="Viterbi-function"><a href="#Viterbi-function" class="headerlink" title="Viterbi function"></a>Viterbi function</h3><p>This function directly deployed viterbi algorithm for a single sentence noted that the input sentence should be a list of word index. The most complex part is recursion step where the algorithm formula is $viterbi[s,t] = \max_{s’=1}^{N} viterbi[s’, t-1] * a_{s’, s}*b_s(O_t)$. However, with broadcasting feature of numpy arrays, the application of this formula in my code is to mutiply viterbi[:, t-1] with shape (s, 1), transition A matrix with shape (s, s) and B($O_s$) with shape (1, s). The result would be a (s, s) matrix where max value of each row is what we need for viterbi[s, t].</p>
+<h2 id="K-selection-and-model-evaluation"><a href="#K-selection-and-model-evaluation" class="headerlink" title="K selection and model evaluation"></a>K selection and model evaluation</h2><p>In this case, I continued using grid search to find the best k of smoothing method. Bellowed is grid searching result for k from 0.1 to 1 with step size 0.1 where we can estimate the best k should be less than 0.1.</p>
+<p><img src="/2020/04/10/Hidden-Markov/Grid_search_1.png" alt="avatar"></p>
+<p>Therefore, I applied a more precise k list from 0.01 to 0.1:</p>
+<p><img src="/2020/04/10/Hidden-Markov/Grid_search_2.png" alt="avatar"></p>
+<p>The accuracy did not change a lot in different ks, so I chose the best k as 0.08. And the final model accuracy is 0.912123.</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        share
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/10/Hidden-Markov/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hidden-Markov-Model/" rel="tag">Hidden Markov Model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li></ul>
 
-    
+
+    </footer>
+
   </div>
-</article>
-      
+
   
   
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/03/25/N-Grams-Project/" class="archive-article-date">
-  <time datetime="2020-03-25T04:17:48.000Z" itemprop="datePublished">03/25</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/03/25/N-Grams-Project/"
-    >N Grams Project</a
-  >
-</h2>
+  <nav class="article-nav">
+    
+      <a href="/2020/04/27/Distributional-Semantics/" class="article-nav-link">
+        <strong class="article-nav-caption">Previous post</strong>
+        <div class="article-nav-title">
+          
+            Distributional Semantics
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/25/N-Grams-Project/" class="article-nav-link">
+        <strong class="article-nav-caption">Next post</strong>
+        <div class="article-nav-title">N Grams Project</div>
+      </a>
+    
+  </nav>
+
+
   
 
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/N-grams/" rel="tag">N-grams</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li></ul>
-
-    
-  </div>
-</article>
-      
   
   
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/03/06/N-grams-and-HMM/" class="archive-article-date">
-  <time datetime="2020-03-06T22:06:23.000Z" itemprop="datePublished">03/06</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/03/06/N-grams-and-HMM/"
-    >N-grams and HMM</a
-  >
-</h2>
-  
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hidden-Markov-Models/" rel="tag">Hidden Markov Models</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/N-grams/" rel="tag">N-grams</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/03/01/Naive-Bayes-Classifier/" class="archive-article-date">
-  <time datetime="2020-03-01T22:06:45.000Z" itemprop="datePublished">03/01</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/03/01/Naive-Bayes-Classifier/"
-    >Naive Bayes Classifier</a
-  >
-</h2>
-  
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Naive-Bayes/" rel="tag">Naive Bayes</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/20/Naive-Bayes-and-Logistic-Regression/" class="archive-article-date">
-  <time datetime="2020-02-20T18:14:09.000Z" itemprop="datePublished">02/20</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/02/20/Naive-Bayes-and-Logistic-Regression/"
-    >Naive Bayes and Logistic Regression</a
-  >
-</h2>
-  
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computational-Linguistics/" rel="tag">Computational Linguistics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradient-Descent/" rel="tag">Gradient Descent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logistic-Regression/" rel="tag">Logistic Regression</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Naive-Bayes/" rel="tag">Naive Bayes</a></li></ul>
-
-    
-  </div>
-</article>
-      
-      
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
     </div>
-  </div>
-  
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: '',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        avatar: 'mp',
+        placeholder: 'Some comments on my post?',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
   
 
   
+  
+  
+
+</article>
 </section>
       <footer class="footer">
   <div class="outer">
@@ -385,6 +366,30 @@
 </script>
 
 
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
 
 
 <script>
